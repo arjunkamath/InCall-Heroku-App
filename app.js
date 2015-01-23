@@ -104,7 +104,7 @@ app.get('/fire-event/:event_name', function(req, res) {
   console.log('Event is: ' + req.params.event_name);
   publisherClient.publish( 'updates', ('"' + req.params.event_name + '" page visited') );
   res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('TEST: All clients have received "' + req.params.event_name + '"');
+  res.write('SECOND TEST: All clients have received "' + req.params.event_name + '"');
   res.end();
 });
 
