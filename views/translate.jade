@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    link(href='css/style.css', rel='stylesheet', type='text/css')
+    script(src='js/jquery.min.js')
+    script(src='js/messages.js')
+    script(src='js/translate.js')
+    title Translation
+  body
+    #imageArea
+      div
+        button(onclick='translate_left()') Left
+        button(onclick='translate_right()') Right
+    #connection
+      img#connection_image
+    #imageArea2
+    #messageArea

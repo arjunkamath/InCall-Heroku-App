@@ -1,8 +1,378 @@
+/* ------------------------------------------
+PURE CSS SPEECH BUBBLES
+by Nicolas Gallagher
+- http://nicolasgallagher.com/pure-css-speech-bubbles/
+
+http://nicolasgallagher.com
+http://twitter.com/necolas
+
+Created: 02 March 2010
+Version: 1.2 (03 March 2011)
+
+Dual licensed under MIT and GNU GPLv2 © Nicolas Gallagher
+------------------------------------------ */
+
+/* NOTE: Some declarations use longhand notation so that it can be clearly
+explained what specific properties or values do and what their relationship
+is to other properties or values in creating the effect */
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	padding:0;
+	margin:0;
+	font:1em/1.4 Cambria, Georgia, sans-serif;
+	color:#333;
+	background:#ffffff;
+}
+
+p {
+	margin-top: 0.9em;
+	margin-bottom: 0px;
 }
 
 a {
   color: #00B7FF;
 }
+
+#imageArea {
+	position: absolute;
+        left: 0px;
+        margin-top: 0px;
+        top: 0px;
+	width: 50%;
+	height: 182px;
+	background: url("../img/upper_bar_background.png");
+        border-right-style: solid;
+        border-right-color:#ff8000;
+}
+
+#imageArea2 {
+        position: absolute;
+        right: 0px;
+        margin-top: 0px;
+        top: 0px;
+        width: 50%;
+        height: 182px;
+        background: url("../img/under_bar_background.png");
+}
+
+#messageArea {
+	position: absolute;
+	top: 142px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow-y: scroll;
+	overflow: auto;
+	background-image: url("../img/background.png");
+	background-size: 100% 100%;
+        border-top-style: solid;
+        border-top-color:#ff8000;
+}
+
+#connection {
+	position: absolute;
+	margin-left: 234px;
+	top: 10px;
+	height: 40px;
+	clear: both;
+}
+
+#connection_image {
+	width: 1452px;
+	height: 64px;
+}
+
+#left_caller_image {
+	margin-left: 42px;
+}
+
+#right_caller_image {
+	margin-right: 42px;
+}
+
+.triangle-border {
+	position:relative;
+	border:8px solid #5a8f00;
+	padding:40px;
+	color:#333;
+	background:#fff;
+	/* css3 */
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+}
+
+.triangle-border.left {
+	margin-left:50px;
+	border:8px solid #00ABD5;
+	color: #00ABD5;
+	/* background: #C1E7F4; */
+}
+
+.triangle-border.right {
+	margin-right:50px;
+	border:8px solid #00ABD5;
+	color: #00ABD5;
+	/* background: #F4A6A9; */
+}
+
+.triangle-border.top {
+	border:8px solid #EC2F23;
+	color: #EC2F23;
+	/* background: #F4A6A9; */
+}
+
+.triangle-border.plain {
+	border:2px solid #00ABD5;
+	margin-right: 50px;
+	margin-left: 50px;
+	color: #FFFFFF;
+	background: #00ABD5;
+}
+
+.triangle-border:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:40px; /* controls horizontal position */
+	border-width:20px 20px 0;
+	border-style:solid;
+	border-color:#5a8f00 transparent;
+	/* reduce the damage in FF3.0 */
+	display:block;
+	width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+	content:"";
+	position:absolute;
+	bottom:-13px; /* value = - border-top-width - border-bottom-width */
+	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+	border-width:13px 13px 0;
+	border-style:solid;
+	border-color:#fff transparent;
+	/* reduce the damage in FF3.0 */
+	display:block;
+	width:0;
+}
+
+.triangle-border.left:before {
+	top:-30px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:23px; /* controls horizontal position */
+	right:auto;
+	border-width:0 20px 30px;
+	border-color: #00ABD5 transparent;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+	top:-18px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:30px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+	right:auto;
+	border-width:0 13px 19px;
+}
+
+.triangle-border.right:before {
+	top:-30px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:auto;
+	right:23px; /* controls horizontal position */
+	border-width:0 20px 30px;
+	border-color: #00ABD5 transparent;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.right:after {
+	top:-18px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:auto;
+	right:30px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+	border-width:0 13px 19px;
+}
+
+.triangle-border.top:before {
+	top:-30px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:auto;
+	right:93px; /* controls horizontal position */
+	border-width:0 20px 30px;
+	border-color: #EC2F23 transparent;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.top:after {
+	top:-18px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:auto;
+	right:100px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+	border-width:0 13px 19px;
+}
+
+
+/* creates the smaller  triangle */
+.triangle-border.plain:after {
+	top: auto;
+	bottom: auto;
+	left:auto;
+	right: auto;
+	border-width: 0px;
+}
+
+.triangle-border.plain:before {
+	top: auto;
+	bottom: auto;
+	left:auto;
+	right: auto;
+	border-width: 0px;
+}
+
+.message {
+	clear: both;
+	font-size: 42px;
+	font-family: Arial, sans;
+	font-weight: bold;
+	max-width: 600px;
+	line-height: 100%;
+}
+
+.transl_left {
+        margin-top: 0px;
+        margin-left: auto;
+        float: left;
+}
+
+.transl_right {
+        margin-top: 0px;
+        margin-right: auto;
+        float: right;
+}
+
+.user_left {
+        margin-top: 40px;
+	margin-left: auto;
+	float: left;
+}
+
+.user_right {
+        margin-top: 40px;
+	margin-right: auto;
+	float: right;
+}
+
+.genie {
+	margin-left: auto;
+	margin-right: auto;
+	float: center;
+	text-align: center;
+	max-width: 250px;
+}
+
+.general {
+	margin-right: auto;
+	margin-left: auto;
+	float: center;
+	text-align: center;
+}
+
+.notification {
+	font-size: 42px;
+	font-family: Arial, sans;
+	font-weight: bold;
+}
+
+.note {
+	font-size: 42px;
+	font-family: Arial, sans;
+	font-weight: normal;
+	max-width: 600px;
+}
+
+.message.langfrom {
+	font-color: #FFFFFF;
+}
+
+.message.langto {
+        font-color: #FF8000;
+}
+
+.sending {
+	margin-top: 10px;
+	margin-bottom: 25px;
+	padding-top: 100px;
+}
+
+.lang {
+	position:relative;
+}
+
+.lang.left  {
+	margin:0px;
+        left:100px;
+        background-color : #FFFFFF;
+}
+
+.lang.left.from  {
+        color: #000000;
+}
+
+.lang.left.to  {
+        color: #FF8000;
+}
+
+.lang.right  {
+        margin:0;       
+        right:180px;
+        background-color : #FFFFFF;
+}
+
+.lang.right.from  {
+        color: #000000;
+}
+
+.lang.right.to  {
+        color: #FF8000;
+}
+
+.tb1 {
+        position:relative;
+        margin 0;
+	border: 1px solid #FF8000;
+	width: 600px;
+}
+
+.tb1.left {
+        margin:0;
+        margin-left: 50px;
+}
+
+.tb1.left.up {
+        margin-top: 20px;
+        color: #000000;
+        background-color : #FFFFFF;
+}
+
+.tb1.left.down {
+        color: #FFFFFF;
+        background-color : #FF8000;
+}
+
+.tb1.right {
+        margin:0; 
+        right:50px;
+}
+
+.tb1.right.up {
+        margin-top: 20px;
+        color: #000000;
+        background-color : #FFFFFF;
+}
+
+.tb1.right.down {
+        color: #FFFFFF;
+        background-color : #FF8000;
+}
+
+
