@@ -2,14 +2,15 @@ doctype html
 html(lang='en')
   head
     title InCall Visualisation
-    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', rel='stylesheet', type='text/css')
-    link(href='css/vis.css', rel='stylesheet', type='text/css')
-    link(href='css/phone.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/vis.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/phone.css', type='text/css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
-    script(src='js/vis.js')
-    script(src='js/velocity.min.js')
-    script(src='js/velocity.ui.js')
+    script(src='/javascripts/vis.js')
+    script(src='/javascripts/velocity.min.js')
+    script(src='/javascripts/velocity.ui.js')
     style.
       div#iframe-wrapper iframe {
       display:block;
@@ -25,6 +26,7 @@ html(lang='en')
       border-radius: 25px;
       }
   body
+    ul.data
     br
     button(onclick='incoming()') Incoming
     button(onclick='connected()') Connected
@@ -39,11 +41,11 @@ html(lang='en')
         line#connect_line(x1='150', y1='50', x2='850', y2='50', opacity='0', stroke='#00285F', stroke-width='10')
         line#vertical_line(x1='500', y1='75', x2='500', y2='150', opacity='0', stroke='#00285F', stroke-width='10')
         rect#sms_box(width='30', height='20', x='850', y='40', rx='5', ry='5', fill='white', stroke='#00285F', stroke-width='2', opacity='100')
-        image#user1(x='100', y='0', width='100', height='100', xlink:href='img/user1.png')
-        image#user2(x='800', y='0', width='100', height='100', xlink:href='img/user2.png')
-        image#webcloud(x='420', y='0', width='161', height='100', opacity='0', xlink:href='img/webcloud.png')
-        image#telcocloud(x='420', y='0', width='161', height='100', opacity='0', xlink:href='img/telcocloud.png')
-        image#convergedcloud(x='360', y='0', width='281', height='100', opacity='0', xlink:href='img/convergedcloud.png')
+        image#user1(x='100', y='0', width='100', height='100', xlink:href='/images/user1.png')
+        image#user2(x='800', y='0', width='100', height='100', xlink:href='/images/user2.png')
+        image#webcloud(x='420', y='0', width='161', height='100', opacity='0', xlink:href='/images/webcloud.png')
+        image#telcocloud(x='420', y='0', width='161', height='100', opacity='0', xlink:href='/images/telcocloud.png')
+        image#convergedcloud(x='360', y='0', width='281', height='100', opacity='0', xlink:href='/images/convergedcloud.png')
       #app_area_wrapper
         svg#app_area(width='100%', height='100', viewbox='0 0 1000 100')
           rect#rect_sharing(width='150', height='50', x='200', y='25', fill='white', stroke='#00285F', stroke-width='2', opacity='0')
@@ -51,4 +53,4 @@ html(lang='en')
           rect#rect_recording(width='150', height='50', x='650', y='25', fill='white', stroke='#00285F', stroke-width='2', opacity='0')
         #iframe-wrapper
           iframe#frame(width='0px', height='0px', style='float:center')
-    script(src='js/animate.js')
+    script(src='/javascripts/animate.js')
