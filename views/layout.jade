@@ -11,9 +11,9 @@ html
 
       source.addEventListener('message', function(e) {
         console.log(e);
-		
-		$('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
-		
+        
+        $('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
+        
         if((e.data).indexOf("incoming") > -1){
           incoming();
         } else if((e.data).indexOf("connected") > -1){
