@@ -3,14 +3,12 @@ html(lang='en')
   head
     title InCall Visualisation
     link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css', type='text/css')
-    link(rel='stylesheet', href='/stylesheets/vis.css', type='text/css')
     link(rel='stylesheet', href='/stylesheets/phone.css', type='text/css')
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src='//cdn.jsdelivr.net/velocity/1.2.1/velocity.min.js')
-    script(src='//cdn.jsdelivr.net/velocity/1.2.1/velocity.ui.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
-    script(src='/javascripts/vis.js')
+    script(src='/javascripts/velocity.min.js')
+    script(src='/javascripts/velocity.ui.js')
+    script(src='/javascripts/animate.js')
     style.
       div#iframe-wrapper iframe {
       display:block;
@@ -46,4 +44,3 @@ html(lang='en')
           rect#rect_recording(width='150', height='50', x='650', y='25', fill='white', stroke='#00285F', stroke-width='2', opacity='0')
         #iframe-wrapper
           iframe#frame(width='0px', height='0px', style='float:center')
-    script(src='/javascripts/animate.js')
