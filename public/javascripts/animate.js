@@ -174,11 +174,11 @@ function pma_push(){
 	$("#pma_drop")
 	.velocity({ r:10 }, { duration: 1000 })
 	.velocity({translateY : 100}, 1500, function(){
-		var logo_img = "img/folder_pma_logo.svg";
+		var logo_img = "/images/folder_pma_logo.svg";
 		$("#folder_pma").attr('xlink:href',logo_img);
 		//$("#folder_pma").velocity("callout.bounce", 1000);
 		$("#pma_right_line").velocity({ x2: 400 }, 1000, function(){
-			$("#pma_tablet").attr('xlink:href',"img/tablet_pma_logo.svg");
+			$("#pma_tablet").attr('xlink:href',"/images/tablet_pma_logo.svg");
 			//$("#circle_announce").velocity({ r: 3 }, { queue: false, duration: 1000 });
 		});
 	});

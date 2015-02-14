@@ -1,211 +1,122 @@
-doctype html(lang='en')
-head
+doctype html
+html(lang='en')
+  head
     title InCall Visualisation
-    link(href='css/bootstrap.min.css', rel='stylesheet', type='text/css')
-    link(href='css/vis.css', rel='stylesheet', type='text/css')
-    link(href='css/phone.css', rel='stylesheet', type='text/css')
-    script(src='js/jquery-1.11.1.min.js')
-    script(src='js/bootstrap.min.js')
-    script(src='js/vis.js')
-    script(src='js/velocity.min.js')
-    script(src='js/velocity.ui.js')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/vis.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/phone.css', type='text/css')
+    script(src='/javascripts/jquery-1.11.1.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/vis.js')
+    script(src='/javascripts/velocity.min.js')
+    script(src='/javascripts/velocity.ui.js')
+    script(src='/javascripts/animate.js')
   body
     h3 PMA
-    |
     button.btn.btn-default(onclick='pma_connecting()') Connecting
-    |
     button.btn.btn-default(onclick='telco_cloud_appear()') Telco Cloud
-    |
     button.btn.btn-default(onclick='it_cloud_appear()') IT Cloud
-    |
     button.btn.btn-default(onclick='converge()') Converge
-    |
     button.btn.btn-default(onclick='pma_push()') PMA Push
-    |
     button.btn.btn-default(onclick='pma_connected()') PMA Connected
-    |
     button.btn.btn-default(onclick='pma_share()') PMA Share
-    |
     button.btn.btn-default(onclick='pma_announce()') PMA Announce
-    |
     button.btn.btn-default(onclick='pma_record()') PMA Record
-    |
     button.btn.btn-default(onclick='pma_play()') PMA Play
-    |
     button.btn.btn-default(onclick='pma_announce_stop()') PMA Announce Stop
-    |
-    |
     br
-    |
     h3 Translation
-    |
     button.btn.btn-default(onclick='translate_connecting()') Connecting
-    |
     button.btn.btn-default(onclick='telco_cloud_appear()') Telco Cloud
-    |
     button.btn.btn-default(onclick='it_cloud_appear()') IT Cloud
-    |
     button.btn.btn-default(onclick='converge()') Converge
-    |
     button.btn.btn-default(onclick='trans_connected()') Translation Connected
-    |
     button.btn.btn-default(onclick='translate_app()') Translate App
-    |
     button.btn.btn-default(onclick='enter_text_tl()') Translate TL
-    |
     button.btn.btn-default(onclick='enter_text_bl()') Translate BL
-    |
     button.btn.btn-default(onclick='enter_text_tr()') Translate TR
-    |
     button.btn.btn-default(onclick='enter_text_br()') Translate BR
-    |     
     input#textbox(type='text', name='inputform', value='Lorem Ipsum is dummy text for printing industry')
-    //
-      <button onclick="wake_tablet()">Wake Tablet</button>
-      <button onclick="share_meeting('url54ca07f1e4b0cfe4ab5ce253')">Share Meeting</button>
-      <button onclick="disconnected()">Disconnected</button>
-      <button onclick="translate_frame()">Translate</button>
-      <button onclick="text_box()">Text Box</button>
+   
     .container
       .row(style='height:100px')
-      |   
       .row
         #usera_area.col-xs-2.nopadding
           .row(style='height:80px')
-          |
           .row
             svg#usera_svg(width='100%', height='200', viewbox='0 0 100 50', preserveaspectratio='xMidYMid slice', xmlns='http://www.w3.org/2000/svg')
-              image#user1(x='0', y='0', width='100', height='50', xlink:href='img/user1.png')
-          |
+              image#user1(x='0', y='0', width='100', height='50', xlink:href='/images//user1.png')
           #pma_frame_gap.row(style='height:94px')
-          |
           .row
             iframe#frame_pma(x='0', y='0', width='0', height='0', opacity='0', allowtransparency='true', src='https://tabin1.punosmobile.com/pma-cloud/#/54ca07f1e4b0cfe4ab5ce253', marginwidth='30')
-        |
         #cloud_area.col-xs-8.nopadding
           .row(style='height:30px')
-          |
           .row.nopadding
             svg#cloud_svg(width='100%', height='600', viewbox='0 0 400 100', preserveaspectratio='xMaxYMax meet', xmlns='http://www.w3.org/2000/svg')
               g#telco_group(transform='translate(10,-87) scale(1,1)')
                 circle#circle_a(cx='130', cy='-40', r='0', fill='#00285F', stroke-width='0')
-                |
                 circle#circle_b(cx='180', cy='-70', r='0', fill='#00285F', stroke-width='0')
-                |
                 circle#circle_c(cx='180', cy='-35', r='0', fill='#00285F', stroke-width='0')
-                |
                 circle#circle_d(cx='240', cy='-60', r='0', fill='#00285F', stroke-width='0')
-                |
                 circle#circle_e(cx='255', cy='-30', r='0', fill='#00285F', stroke-width='0')
-                |
                 circle#circle_f(cx='230', cy='-30', r='0', fill='#00285F', stroke-width='0')
-              |
-              |
-              |
+          
               g#it_group(transform='translate(-10,-45) scale(1,1)')
                 circle#circle_g(cx='270', cy='40', r='0', fill='#5fbadd', stroke-width='0')
-                |
-                circle#circle_h(cx='220', cy='70', r='0', fill='#5fbadd', stroke-width='0')
-                |
+                circle#circle_h(cx='220', cy='70', r='0', fill='#5fbadd', stroke-width='0')           
                 circle#circle_i(cx='220', cy='35', r='0', fill='#5fbadd', stroke-width='0')
-                |
                 circle#circle_j(cx='160', cy='60', r='0', fill='#5fbadd', stroke-width='0')
-                |
                 circle#circle_k(cx='145', cy='30', r='0', fill='#5fbadd', stroke-width='0')
-                |
                 circle#circle_l(cx='170', cy='30', r='0', fill='#5fbadd', stroke-width='0')
-              |
               line#connecting_line(x1='-56', y1='-130', x2='-56', y2='-130', opacity='1', stroke='#00285F', stroke-width='8', stroke-linecap='round', stroke-dasharray='30, 25')
-              |
               line#connect_line(x1='0', y1='-130', x2='0', y2='-130', opacity='1', stroke='#00285F', stroke-width='8')
-              |
-              |
               text#telco_text(x='160', y='-120', fill='#fff', font-family='arial', font-size='25', opacity='0') TELCO
-              |
-              |
               text#it_text(x='180', y='20', fill='#fff', font-family='arial', font-size='40', opacity='0') IT
-              |
               line#audio_line_left_1(x1='146', y1='-130', x2='146', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_left_2(x1='152', y1='-130', x2='152', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_left_3(x1='158', y1='-130', x2='158', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_left_4(x1='164', y1='-130', x2='164', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_left_5(x1='170', y1='-130', x2='170', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
-              |
               line#audio_line_right_1(x1='230', y1='-130', x2='230', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_right_2(x1='236', y1='-130', x2='236', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_right_3(x1='242', y1='-130', x2='242', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_right_4(x1='248', y1='-130', x2='248', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              |
               line#audio_line_right_5(x1='254', y1='-130', x2='254', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
-              //
-                <line id="connecting_line_border" x1="10" y1="-130" x2="10" y2="-130" opacity="1" stroke="#fff" stroke-width="11"/>
-                <line id="connect_line_border" x1="2" y1="-130" x2="2" y2="-130" opacity="1" stroke="#fff" stroke-width="11" />
               circle#pma_app_drop(cx='203', cy='-130', r='0', fill='#fff', stroke-width='3', stroke='#00285F')
-              |
               circle#pma_drop(cx='203', cy='-130', r='0', fill='#00a9df', stroke-width='3', stroke='#fff')
-              // <rect id="translation_rect" x="40" y="-100" width="320" height="150" opacity="0.5" style="fill:#fff" stroke="#00285F" stroke-width="3" />
               foreignobject#translate_area(x='0', y='-70', width='100%', height='250', opacity='0')
                 body(xmlns='http://www.w3.org/1999/xhtml')
                   .trans_left_box
                     #english_left(style='background-color:#e1e2e3; height:auto; float:right; font-size: 70%; border: 2px solid #fff; color:#87888a; padding: 4px; border-radius: 5px;') English
-                    |
                     #trans_tl.trans_text(style='background-color:#e1e2e3; height:auto; border: 2px solid #fff; border-radius: 5px; font-size: 70%; color:#87888a; padding: 10px; margin-top: 20px;')
-                    |
                     div(style='height:10px')
-                    |
                     #spanish_left(style='background-color:#89ba17; height:auto; float:right; font-size: 70%; border: 2px solid #fff; color:#ffffff; padding: 4px; border-radius: 5px') Spanish
-                    |
                     #trans_bl.trans_text(style='background-color:#89ba17; height:auto; border: 2px solid #fff; border-radius: 5px;font-size: 70%; padding: 10px; color:#fff; margin-top: 20px;')
-                  |
                   .trans_right_box
                     #spanish_right(style='background-color:#e1e2e3; height:auto; float:left; font-size: 70%; border: 2px solid #fff; color:#87888a; padding: 4px; border-radius: 5px;') Spanish
-                    |
                     #trans_tr.trans_text(style='background-color:#e1e2e3; height:auto; border: 2px solid #fff; border-radius: 5px; font-size: 70%; color:#87888a; padding: 10px; margin-top: 20px;')
-                    |
                     div(style='height:10px')
-                    |
                     #english_right(style='background-color:#89ba17; height:auto; float:left; font-size: 70%; border: 2px solid #fff; color:#ffffff; padding: 4px; border-radius: 5px;') English
-                    |
                     #trans_br.trans_text(style='background-color:#89ba17; height:auto; border: 2px solid #fff; border-radius: 5px; font-size: 70%; color:#fff; padding: 10px; margin-top: 20px;')
-              |
-              |
               line#pma_left_line(x1='178', y1='-25', x2='178', y2='-25', opacity='0', stroke='#00a9d4', stroke-width='5', stroke-linecap='round', stroke-dasharray='10, 13')
-              |
               line#pma_right_line(x1='210', y1='-25', x2='210', y2='-25', opacity='1', stroke='#00a9d4', stroke-width='5')
-              |
-              |
-              image#folder_pma(x='160', y='-75', width='90', height='90', opacity='0', xlink:href='img/folder_pma_nologo.svg')
-                image#envelope(x='180', y='-150', width='35', height='35', opacity='0', xlink:href='img/envelope.svg')
-                  image#pma_app_play(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='img/pma_app_play.svg')
-                    image#pma_app_announce(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='img/pma_app_announce.svg')
-                      image#pma_app_record(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='img/pma_app_record.svg')
-                        image#pma_app_share(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='img/pma_app_share.svg')
-                          image#trans_app(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='img/trans_app.svg')
-        |
+              image#folder_pma(x='160', y='-75', width='90', height='90', opacity='0', xlink:href='/images/folder_pma_nologo.svg')
+              image#envelope(x='180', y='-150', width='35', height='35', opacity='0', xlink:href='/images/envelope.svg')
+              image#pma_app_play(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='/images/pma_app_play.svg')
+              image#pma_app_announce(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='/images/pma_app_announce.svg')
+              image#pma_app_record(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='/images/pma_app_record.svg')
+              image#pma_app_share(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='/images/pma_app_share.svg')
+              image#trans_app(x='170', y='-160', width='60', height='60', opacity='0', xlink:href='/images/trans_app.svg')
         #userb_area.col-xs-2.nopadding
           .row(style='height:80px')
-          |
           .row
             svg#userb_svg(width='100%', height='200', viewbox='0 0 100 50', preserveaspectratio='xMidYMid slice', xmlns='http://www.w3.org/2000/svg')
-              image#user2(width='100', height='50', xlink:href='img/user2.png')
-          |
+              image#user2(width='100', height='50', xlink:href='/images/user2.png')
           .row
             svg#tablet_svg(width='100%', height='200', viewbox='0 0 100 50', preserveaspectratio='xMidYMid slice', xmlns='http://www.w3.org/2000/svg')
-              image#pma_tablet(x='25', y='0', width='50', height='50', opacity='0', xlink:href='img/tablet_pma_nologo.svg')
-                circle#circle_share(cx='34', cy='32', r='0', fill='#00a9d4', stroke-width='0')
-                |
-                circle#circle_announce(cx='43', cy='32', r='0', fill='#7b0663', stroke-width='0')
-                |
-                circle#circle_record(cx='52', cy='32', r='0', fill='#e32119', stroke-width='0')
-                |
-                circle#circle_play(cx='61', cy='32', r='0', fill='#7b0663', stroke-width='0')
-    script(src='js/animate.js')
-
+              image#pma_tablet(x='25', y='0', width='50', height='50', opacity='0', xlink:href='/images/tablet_pma_nologo.svg')
+              circle#circle_share(cx='34', cy='32', r='0', fill='#00a9d4', stroke-width='0')
+              circle#circle_announce(cx='43', cy='32', r='0', fill='#7b0663', stroke-width='0')
+              circle#circle_record(cx='52', cy='32', r='0', fill='#e32119', stroke-width='0')
+              circle#circle_play(cx='61', cy='32', r='0', fill='#7b0663', stroke-width='0')
