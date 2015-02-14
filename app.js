@@ -57,6 +57,7 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index');
+  //res.sendfile('index.html'); 
 });
 
 app.get('/update-stream', function(req, res) {
