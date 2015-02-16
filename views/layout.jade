@@ -13,7 +13,7 @@ html
         console.log(e);
         
         $('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
-        
+
         if((e.data).indexOf("pma_connecting") > -1){
           pma_connecting();
         } else if((e.data).indexOf("telco_cloud_appear") > -1){
@@ -47,7 +47,8 @@ html
         } else if((e.data).indexOf("enter_text_tr") > -1){
           enter_text_tr();
         } else if((e.data).indexOf("enter_text_br") > -1){
-          enter_text_br();
+		  var text = e.data; 
+          enter_text_br(text.substr(14, text.length-15));
         }
       
       }, false);

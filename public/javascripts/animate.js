@@ -377,7 +377,8 @@ function enter_text_tr(text)
 
 function enter_text_br(text)
 {
-	document.getElementById("trans_br").innerHTML = document.getElementById("textbox").value;
+	//document.getElementById("trans_br").innerHTML = document.getElementById("textbox").value;
+	document.getElementById("trans_br").innerHTML = text;
 }
 
 function disconnected() {
