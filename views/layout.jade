@@ -14,15 +14,41 @@ html
         
         $('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
         
-        if((e.data).indexOf("incoming") > -1){
-          translate_connecting();
-        } else if((e.data).indexOf("connected") > -1){
+        if((e.data).indexOf("pma_connecting") > -1){
+          pma_connecting();
+        } else if((e.data).indexOf("telco_cloud_appear") > -1){
+          telco_cloud_appear();
+        } else if((e.data).indexOf("it_cloud_appear") > -1){
+          it_cloud_appear();
+        } else if((e.data).indexOf("converge") > -1){
           converge();
-          connected();
-        } else if((e.data).indexOf("share") > -1){
-          send_sms();
-        } else if((e.data).indexOf("disc") > -1){
-          disconnected();
+        } else if((e.data).indexOf("pma_push") > -1){
+          pma_push();
+        } else if((e.data).indexOf("pma_connected") > -1){
+          pma_connected();
+        } else if((e.data).indexOf("pma_share") > -1){
+          pma_share();
+        } else if((e.data).indexOf("pma_announce") > -1){
+          pma_announce();
+        } else if((e.data).indexOf("pma_record") > -1){
+          pma_record();
+        } else if((e.data).indexOf("pma_play") > -1){
+          pma_play();
+        } else if((e.data).indexOf("translate_connecting") > -1){
+          translate_connecting();
+        } else if((e.data).indexOf("trans_connected") > -1){
+          trans_connected();
+        } else if((e.data).indexOf("translate_app") > -1){
+          translate_app();
+        } else if((e.data).indexOf("enter_text_tl") > -1){
+          enter_text_tl();
+        } else if((e.data).indexOf("enter_text_bl") > -1){
+          enter_text_bl();
+        } else if((e.data).indexOf("enter_text_tr") > -1){
+          enter_text_tr();
+        } else if((e.data).indexOf("enter_text_br") > -1){
+          enter_text_br();
         }
+		
       
       }, false);
