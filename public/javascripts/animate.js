@@ -362,17 +362,20 @@ function translate_app() {
 
 function enter_text_tl(text)
 {
-	document.getElementById("trans_tl").innerHTML = document.getElementById("textbox").value;
+	//document.getElementById("trans_tl").innerHTML = document.getElementById("textbox").value;
+	document.getElementById("trans_tl").innerHTML = text;
 }
 
 function enter_text_bl(text)
 {
-	document.getElementById("trans_bl").innerHTML = document.getElementById("textbox").value;
+	//document.getElementById("trans_bl").innerHTML = document.getElementById("textbox").value;
+	document.getElementById("trans_bl").innerHTML =text;
 }
 
 function enter_text_tr(text)
 {
-	document.getElementById("trans_tr").innerHTML = document.getElementById("textbox").value;
+	//document.getElementById("trans_tr").innerHTML = document.getElementById("textbox").value;
+	document.getElementById("trans_tr").innerHTML = text;
 }
 
 function enter_text_br(text)
