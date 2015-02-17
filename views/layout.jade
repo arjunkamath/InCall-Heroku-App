@@ -47,8 +47,8 @@ html
         } else if((e.data).indexOf("enter_text_tr") > -1){
           enter_text_tr();
         } else if((e.data).indexOf("enter_text_br") > -1){
-		  var text = e.data; 
-          enter_text_br(text.substr(14, text.length-15));
+          var text = e.data; 
+          enter_text_br(text.slice(11, -2));
         }
       
       }, false);
