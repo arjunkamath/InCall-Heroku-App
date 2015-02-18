@@ -34,12 +34,13 @@ html
           pma_record();
         } else if((e.data).indexOf("pma_play") > -1){
           pma_play();
+        
+
+
         } else if((e.data).indexOf("translate_connecting") > -1){
-          translate_connecting();
-        } else if((e.data).indexOf("trans_connected") > -1){
-          trans_connected();
-        } else if((e.data).indexOf("translate_app") > -1){
-          translate_app();
+          translator_connecting();
+        } else if((e.data).indexOf("translate_connected") > -1){
+          translator_connected();
         } else if((e.data).indexOf("enter_text_tl") > -1){
            var text = e.data;
            enter_text_tl(text.slice(15, -2));

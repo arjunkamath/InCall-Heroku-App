@@ -1,3 +1,28 @@
+/////
+// MAIN TRIGGERS FOR PMA
+
+
+// MAIN TRIGGERS FOR TRANSLATOR
+function translator_connecting(){
+	telco_cloud_appear();
+	translate_connecting();
+
+}
+
+function translator_connected(){
+	trans_connected();
+	setTimeout(it_cloud_appear, 500 );
+	setTimeout(converge, 1500);
+	setTimeout(translate_app, 3500);
+}
+
+
+
+/////
+
+
+
+
 function connecting_line(){
 	function connecting_line_animate(){
 		$("#connecting_line")
