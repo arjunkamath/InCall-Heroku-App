@@ -1,6 +1,43 @@
-/////
 // MAIN TRIGGERS FOR PMA
+function pma_trigger_connecting(){
+	telco_cloud_appear();
+	pma_connecting();
+	setTimeout(it_cloud_appear, 500);
+	setTimeout(converge, 2000);
+	setTimeout(pma_push, 4000);
+}
 
+function pma_trigger_connected(){
+	pma_connected();
+}
+
+function pma_cloud_share(urllink){
+	pma_share(urllink);
+}
+
+function pma_trigger_announce(){
+	pma_announce();
+}
+
+function pma_trigger_stop_announce(){
+	pma_announce_stop();
+}
+
+function pma_trigger_record(){
+	pma_record();
+}
+
+function pma_trigger_stop_record(){
+	console.log('Record stop function does not exist');
+}
+
+function pma_trigger_play(){
+	pma_play();
+}
+
+function pma_trigger_stop_play(){
+	console.log('Play stop function does not exist');
+}
 
 // MAIN TRIGGERS FOR TRANSLATOR
 function translator_connecting(){
@@ -93,14 +130,21 @@ function it_cloud_appear(){
 	$("#circle_l").velocity({ r: 25 }, { delay: 1000, duration: 6500, loop:true});
 }
 
-function pma_share(){
+function pma_share(urllink){
 
 	$("#circle_announce").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
 	$("#circle_record").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
 	$("#circle_play").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
 	$("#circle_share").velocity({ r: 3 }, { duration: 500, easing:"spring" });
 
+	if(urllink){
+		var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(3);
+		console.log('link');
 	
+		var frame = document.getElementById("frame_pma");
+		frame.src = link;
+	}
+
 	$("#pma_app_share").velocity("transition.slideUpBigIn", 1000, function(){
 		//$("#pma_app_play").velocity({opacity:0}, 0);
 		//$("#pma_app_announce").velocity({opacity:0}, 0);
@@ -235,20 +279,23 @@ function pma_play(){
 }
 
 function pma_announce_stop(){
-	/* $("#audio_line_left_1").velocity("stop");
-	$("#audio_line_left_2").velocity("stop");
-	$("#audio_line_left_3").velocity("stop");
-	$("#audio_line_left_4").velocity("stop");
-	$("#audio_line_left_5").velocity("stop");
-	$("#audio_line_right_1").velocity("stop");
-	$("#audio_line_right_2").velocity("stop");
-	$("#audio_line_right_3").velocity("stop");
-	$("#audio_line_right_4").velocity("stop");
-	$("#audio_line_right_5").velocity("stop"); */
-
-
-
+	
+	clearInterval(announce_traffic_repeat);
+	
+	clearInterval(animate_al1);
+	clearInterval(animate_al2);
+	clearInterval(animate_al3);
+	clearInterval(animate_al4);
+	clearInterval(animate_al5);
+	
+	clearInterval(animate_ar1);
+	clearInterval(animate_ar2);
+	clearInterval(animate_ar3);
+	clearInterval(animate_ar4);
+	clearInterval(animate_ar5);
+	
 }
+
 
 function pma_announce(){
 
@@ -261,6 +308,7 @@ function pma_announce(){
 	$("#pma_app_play").velocity("transition.fadeOut", 1000);
 	$("#pma_app_record").velocity("transition.fadeOut", 1000);	
 	$("#pma_app_announce").velocity("transition.slideUpBigIn", 1000, function(){
+		
 	
 	$("#audio_line_left_1").velocity({opacity:1}, { duration: 0 });
 	$("#audio_line_left_2").velocity({opacity:1}, { duration: 0 });
@@ -272,17 +320,7 @@ function pma_announce(){
 	$("#audio_line_right_3").velocity({opacity:1}, { duration: 0 });
 	$("#audio_line_right_4").velocity({opacity:1}, { duration: 0 });
 	$("#audio_line_right_5").velocity({opacity:1}, { duration: 0 });
-	
-	/*
-	$("#audio_line_left_1").velocity({y2:-160}, { duration: 500, loop:true, queue: false});
-	$("#audio_line_left_2").velocity({y2:-150}, { duration: 900, loop:true });
-	$("#audio_line_left_3").velocity({y2:-155}, { duration: 200, loop:true });
-	$("#audio_line_left_4").velocity({y2:-150}, { duration: 400, loop:true });
-	$("#audio_line_right_1").velocity({y2:-160}, { duration: 500, loop:true });
-	$("#audio_line_right_2").velocity({y2:-150}, { duration: 900, loop:true });
-	$("#audio_line_right_3").velocity({y2:-155}, { duration: 200, loop:true });
-	$("#audio_line_right_4").velocity({y2:-150}, { duration: 400, loop:true }); */
-	
+		
 		
 	function al1(){
 	$("#audio_line_left_1")
@@ -356,25 +394,17 @@ function pma_announce(){
 	
 	al1(); al2(); al3(); al4(); al5(); ar1(); ar2(); ar3(); ar4(); ar5();
 	
-	setInterval(al1, 4030);
-	setInterval(al2, 4030);
-	setInterval(al3, 4030);
-	setInterval(al4, 4030);
-	setInterval(al5, 4030);
-	setInterval(ar1, 4030);
-	setInterval(ar2, 4030);
-	setInterval(ar3, 4030);
-	setInterval(ar4, 4030);
-	setInterval(ar5, 4030);
-	
-	/* $("#audio_line_left_2").velocity({translateX:-260}, { duration: 2000, queue: false, loop:true});
-	$("#audio_line_left_3").velocity({translateX:-260}, { duration: 2000, queue: false, loop:true});
-	$("#audio_line_left_4").velocity({translateX:-260}, { duration: 2000, queue: false, loop:true});
-	
-	$("#audio_line_right_1").velocity({translateX:260}, { delay: 500, duration: 2000, queue: false });
-	$("#audio_line_right_2").velocity({translateX:260}, { delay: 500, duration: 2000, queue: false });
-	$("#audio_line_right_3").velocity({translateX:260}, { delay: 500, duration: 2000, queue: false });
-	$("#audio_line_right_4").velocity({translateX:260}, { delay: 500, duration: 2000, queue: false }); */
+	animate_al1 = setInterval(al1, 4030);
+	animate_al2 = setInterval(al2, 4030);
+	animate_al3 = setInterval(al3, 4030);
+	animate_al4 = setInterval(al4, 4030);
+	animate_al5 = setInterval(al5, 4030);
+	animate_ar1 = setInterval(ar1, 4030);
+	animate_ar2 = setInterval(ar2, 4030);
+	animate_ar3 = setInterval(ar3, 4030);
+	animate_ar4 = setInterval(ar4, 4030);
+	animate_ar5 = setInterval(ar5, 4030);
+
 	});
 }
 

@@ -14,29 +14,26 @@ html
         
         $('ul').append('<li>' + e.data + ' (message id: ' + e.lastEventId + ')</li>');
 
-        if((e.data).indexOf("pma_connecting") > -1){
-          pma_connecting();
-        } else if((e.data).indexOf("telco_cloud_appear") > -1){
-          telco_cloud_appear();
-        } else if((e.data).indexOf("it_cloud_appear") > -1){
-          it_cloud_appear();
-        } else if((e.data).indexOf("converge") > -1){
-          converge();
-        } else if((e.data).indexOf("pma_push") > -1){
-          pma_push();
-        } else if((e.data).indexOf("pma_connected") > -1){
-          pma_connected();
-        } else if((e.data).indexOf("pma_share") > -1){
-          pma_share();
-        } else if((e.data).indexOf("pma_announce") > -1){
-          pma_announce();
-        } else if((e.data).indexOf("pma_record") > -1){
-          pma_record();
-        } else if((e.data).indexOf("pma_play") > -1){
-          pma_play();
-        
-
-
+        if((e.data).indexOf("pma_trigger_connecting") > -1){
+          pma_trigger_connecting();
+        } else if((e.data).indexOf("pma_trigger_connected") > -1){
+          pma_trigger_connected();
+        } else if((e.data).indexOf("url") > -1){
+          var urllink = e.data;
+		  pma_cloud_share(urllink);
+        } else if((e.data).indexOf("pma_trigger_announce") > -1){
+          pma_trigger_announce();
+		} else if((e.data).indexOf("pma_trigger_stop_announce") > -1){
+          pma_trigger_stop_announce();
+        } else if((e.data).indexOf("pma_trigger_record") > -1){
+          pma_trigger_record();
+		} else if((e.data).indexOf("pma_trigger_stop_record") > -1){
+          pma_trigger_stop_record();
+        } else if((e.data).indexOf("pma_trigger_play") > -1){
+          pma_trigger_play();
+		} else if((e.data).indexOf("pma_trigger_stop_play") > -1){
+          pma_trigger_stop_play(); 
+		  
         } else if((e.data).indexOf("translate_connecting") > -1){
           translator_connecting();
         } else if((e.data).indexOf("translate_connected") > -1){
