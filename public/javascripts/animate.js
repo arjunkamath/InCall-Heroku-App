@@ -138,8 +138,8 @@ function pma_share(urllink){
 	$("#circle_share").velocity({ r: 3 }, { duration: 500, easing:"spring" });
 
 	if(urllink){
-		var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(3);
-		console.log('link');
+		var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
+		console.log(link);
 	
 		var frame = document.getElementById("frame_pma");
 		frame.src = link;
@@ -280,7 +280,7 @@ function pma_play(){
 
 function pma_announce_stop(){
 	
-	clearInterval(announce_traffic_repeat);
+	//clearInterval(announce_traffic_repeat);
 	
 	clearInterval(animate_al1);
 	clearInterval(animate_al2);

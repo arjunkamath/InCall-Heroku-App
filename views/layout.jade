@@ -20,20 +20,20 @@ html
           pma_trigger_connected();
         } else if((e.data).indexOf("url") > -1){
           var urllink = e.data;
-		  pma_cloud_share(urllink);
+          pma_cloud_share(urllink);
         } else if((e.data).indexOf("pma_trigger_announce") > -1){
           pma_trigger_announce();
-		} else if((e.data).indexOf("pma_trigger_stop_announce") > -1){
+        } else if((e.data).indexOf("pma_trigger_stop_announce") > -1){
           pma_trigger_stop_announce();
         } else if((e.data).indexOf("pma_trigger_record") > -1){
           pma_trigger_record();
-		} else if((e.data).indexOf("pma_trigger_stop_record") > -1){
+        } else if((e.data).indexOf("pma_trigger_stop_record") > -1){
           pma_trigger_stop_record();
         } else if((e.data).indexOf("pma_trigger_play") > -1){
           pma_trigger_play();
-		} else if((e.data).indexOf("pma_trigger_stop_play") > -1){
+        } else if((e.data).indexOf("pma_trigger_stop_play") > -1){
           pma_trigger_stop_play(); 
-		  
+          
         } else if((e.data).indexOf("translate_connecting") > -1){
           translator_connecting();
         } else if((e.data).indexOf("translate_connected") > -1){
