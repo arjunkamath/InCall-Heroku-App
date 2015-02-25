@@ -44,7 +44,7 @@ html
            left_press_1();
         } else if((e.data).indexOf("left_press_9") > -1){
            var text = e.data;
-           var sliced_text = text.slice(14, -1);
+           var sliced_text = text.slice(14, -2);
            var split_text = sliced_text.split(",");
            left_press_9(split_text[0], split_text[1]);
            
@@ -52,7 +52,7 @@ html
           right_press_2();
         } else if((e.data).indexOf("right_press_9") > -1){
           var text = e.data;
-          var sliced_text = text.slice(15, -1);
+          var sliced_text = text.slice(15, -2);
           var split_text = sliced_text.split(",");
           right_press_9(split_text[0], split_text[1]);
         } else if((e.data).indexOf("translate_disconnected") > -1){
