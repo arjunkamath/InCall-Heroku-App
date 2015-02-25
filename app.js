@@ -62,7 +62,7 @@ app.get('/', function(req, res){
 
 app.get('/update-stream', function(req, res) {
   // let request last as long as possible
-  req.socket.setTimeout(Infinity);
+  req.socket.setTimeout(99999);
 
   var messageCount = 0;
   var subscriber = redis.createClient(REDISTOGO_PORT, REDISTOGO_HOST);

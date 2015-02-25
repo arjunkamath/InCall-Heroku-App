@@ -3,50 +3,46 @@ html(lang='en')
   head
     title InCall Visualisation
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css', type='text/css')
-    link(rel='stylesheet', href='/stylesheets/vis.css', type='text/css')
-    link(rel='stylesheet', href='/stylesheets/style.css', type='text/css')
     link(rel='stylesheet', href='/stylesheets/phone.css', type='text/css')
     script(src='/javascripts/jquery-1.11.1.min.js')
     script(src='/javascripts/bootstrap.min.js')
-    script(src='/javascripts/vis.js')
     script(src='/javascripts/velocity.min.js')
     script(src='/javascripts/velocity.ui.js')
     script(src='/javascripts/animate.js')
   body
-    h3 PMA
-    button.btn.btn-default(onclick='pma_connecting()') Connecting
-    button.btn.btn-default(onclick='telco_cloud_appear()') Telco Cloud
-    button.btn.btn-default(onclick='it_cloud_appear()') IT Cloud
-    button.btn.btn-default(onclick='converge()') Converge
-    button.btn.btn-default(onclick='pma_push()') PMA Push
-    button.btn.btn-default(onclick='pma_connected()') PMA Connected
-    button.btn.btn-default(onclick='pma_share()') PMA Share
-    button.btn.btn-default(onclick='pma_announce()') PMA Announce
-    button.btn.btn-default(onclick='pma_record()') PMA Record
-    button.btn.btn-default(onclick='pma_play()') PMA Play
-    button.btn.btn-default(onclick='pma_announce_stop()') PMA Announce Stop
+     h3(style='margin-left: 1cm;') Phone Meeting Assistant
+    button.btn.btn-default(style='margin-left: 1cm;', onclick='pma_trigger_connecting()') 1. Make Call
+    button.btn.btn-default(onclick='pma_trigger_connected()') 2. Call Connects
+    button.btn.btn-default(style='background-color: #00a9d4; border-color: #fff ; color: #fff', onclick='pma_cloud_share()') 3. Cloud Share
+    button.btn.btn-default(style='background-color: #7b0663; border-color: #fff ; color: #fff', onclick='pma_trigger_announce()') 4a. Announce Notes
+    button.btn.btn-default(style='background-color: #7b0663; border-color: #fff ; color: #fff', onclick='pma_trigger_stop_announce()') 4b. Stop Announcement
+    button.btn.btn-default(style='background-color: #e32119; border-color: #fff ; color: #fff', onclick='pma_trigger_record()') 5a. Record Call
+    button.btn.btn-default(style='background-color: #e32119; border-color: #fff ; color: #fff', onclick='pma_trigger_stop_record()') 5b. Stop Recording
+    button.btn.btn-default(style='background-color: #7b0663; border-color: #fff ; color: #fff', onclick='pma_trigger_play()') 6a. Play Recordings
+    button.btn.btn-default(style='background-color: #7b0663; border-color: #fff ; color: #fff', onclick='pma_trigger_stop_play()') 6b. Stop Playing Recording
+    button.btn.btn-default(onclick='pma_trigger_disconnect()') 7. Hang Up
     br
-    h3 Translation
-    button.btn.btn-default(onclick='translate_connecting()') Connecting
-    button.btn.btn-default(onclick='telco_cloud_appear()') Telco Cloud
-    button.btn.btn-default(onclick='it_cloud_appear()') IT Cloud
-    button.btn.btn-default(onclick='converge()') Converge
-    button.btn.btn-default(onclick='trans_connected()') Translation Connected
-    button.btn.btn-default(onclick='translate_app()') Translate App
-    button.btn.btn-default(onclick='enter_text_tl()') Translate TL
-    button.btn.btn-default(onclick='enter_text_bl()') Translate BL
-    button.btn.btn-default(onclick='enter_text_tr()') Translate TR
-    button.btn.btn-default(onclick='enter_text_br()') Translate BR
-    input#textbox(type='text', name='inputform', value='Lorem Ipsum is dummy text for printing industry')
+    h3(style='margin-left: 1cm;') Translator
+    .form-group
+      button.btn.btn-default(style='margin-left: 1cm;', onclick='translator_connecting()') 1. Make Call
+      button.btn.btn-default(onclick='translator_connected()') 2. Call Connects
+      button.btn.btn-default(style='background-color: #89ba17; border-color: #fff ; color: #fff', onclick='left_press_1()') 3. A presses 1
+      button.btn.btn-default(style='background-color: #89ba17; border-color: #fff ; color: #fff', onclick='left_press_9()') 4. A presses 9
+      button.btn.btn-default(style='background-color: #00a9d4; border-color: #fff ; color: #fff', onclick='right_press_2()') 5. B presses 2
+      button.btn.btn-default(style='background-color: #00a9d4; border-color: #fff ; color: #fff', onclick='right_press_9()') 6. B presses 9
+      input#textbox(type='text', style='height:30px', value='Lorem ipsum dolor sit amet, sanctus pertinax reprimique ut eos, quidam urbanitas at quo, sit dolorum.')
+      button.btn.btn-default(onclick='trans_disconnect()') 7. Hang Up
    
     .container
+      .row(style='height:10px') 
       .row(style='height:100px')
+        img(src='/images/logo_ericsson.svg', align='right', height='80', width='80')
       .row
         #usera_area.col-xs-2.nopadding
           .row(style='height:80px')
           .row
             svg#usera_svg(width='100%', height='200', viewbox='0 0 100 50', preserveaspectratio='xMidYMid slice', xmlns='http://www.w3.org/2000/svg')
-              image#user1(x='0', y='0', width='100', height='50', xlink:href='/images//user1.png')
+              image#user1(x='0', y='0', width='100', height='50', opacity="0", xlink:href='/images/user1.png')
           #pma_frame_gap.row(style='height:94px')
           .row
             iframe#frame_pma(x='0', y='0', width='0', height='0', opacity='0', allowtransparency='true', src='https://tabin1.punosmobile.com/pma-cloud/#/54ca07f1e4b0cfe4ab5ce253', marginwidth='30')
@@ -61,7 +57,6 @@ html(lang='en')
                 circle#circle_d(cx='240', cy='-60', r='0', fill='#00285F', stroke-width='0')
                 circle#circle_e(cx='255', cy='-30', r='0', fill='#00285F', stroke-width='0')
                 circle#circle_f(cx='230', cy='-30', r='0', fill='#00285F', stroke-width='0')
-          
               g#it_group(transform='translate(-10,-45) scale(1,1)')
                 circle#circle_g(cx='270', cy='40', r='0', fill='#5fbadd', stroke-width='0')
                 circle#circle_h(cx='220', cy='70', r='0', fill='#5fbadd', stroke-width='0')           
@@ -71,8 +66,8 @@ html(lang='en')
                 circle#circle_l(cx='170', cy='30', r='0', fill='#5fbadd', stroke-width='0')
               line#connecting_line(x1='-56', y1='-130', x2='-56', y2='-130', opacity='1', stroke='#00285F', stroke-width='8', stroke-linecap='round', stroke-dasharray='30, 25')
               line#connect_line(x1='0', y1='-130', x2='0', y2='-130', opacity='1', stroke='#00285F', stroke-width='8')
-              text#telco_text(x='160', y='-120', fill='#fff', font-family='arial', font-size='25', opacity='0') TELCO
-              text#it_text(x='180', y='20', fill='#fff', font-family='arial', font-size='40', opacity='0') IT
+              text#telco_text(x='160', y='-120', fill='#fff', font-size='25', opacity='0') TELCO
+              text#it_text(x='180', y='20', fill='#fff', font-size='40', opacity='0') IT
               line#audio_line_left_1(x1='146', y1='-130', x2='146', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
               line#audio_line_left_2(x1='152', y1='-130', x2='152', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
               line#audio_line_left_3(x1='158', y1='-130', x2='158', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
@@ -83,22 +78,41 @@ html(lang='en')
               line#audio_line_right_3(x1='242', y1='-130', x2='242', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
               line#audio_line_right_4(x1='248', y1='-130', x2='248', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
               line#audio_line_right_5(x1='254', y1='-130', x2='254', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_left_1(x1='2', y1='-130', x2='2', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_left_2(x1='8', y1='-130', x2='8', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_left_3(x1='14', y1='-130', x2='14', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_left_4(x1='20', y1='-130', x2='20', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_left_5(x1='26', y1='-130', x2='26', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_right_1(x1='370', y1='-130', x2='370', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_right_2(x1='376', y1='-130', x2='376', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_right_3(x1='382', y1='-130', x2='382', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_right_4(x1='388', y1='-130', x2='388', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
+              line#record_line_right_5(x1='394', y1='-130', x2='394', y2='-130', opacity='0', stroke='#00285F', stroke-width='4', stroke-linecap='round')
               circle#pma_app_drop(cx='203', cy='-130', r='0', fill='#fff', stroke-width='3', stroke='#00285F')
               circle#pma_drop(cx='203', cy='-130', r='0', fill='#00a9df', stroke-width='3', stroke='#fff')
-              foreignobject#translate_area(x='0', y='-70', width='100%', height='250', opacity='0')
+              circle#pma_announce_traffic(cx='203', cy='-40', r='10', fill='#7b0663', opacity='0', stroke-width='3', stroke='#fff')
+              circle#pma_record_traffic(cx='203', cy='-130', r='10', fill='#e32119', opacity='0', stroke-width='3', stroke='#fff')
+              line#connect_line(x1='0', y1='-130', x2='0', y2='-130', opacity='0', stroke='#00285F', stroke-width='8')
+              line#trans_vert_line(x1='200', y1='-130', x2='200', y2='-130', opacity='0', stroke='#fff', stroke-width='4')
+              line#trans_horiz_line(x1='180', y1='-130', x2='180', y2='-130', opacity='0', stroke='#fff', stroke-width='4')
+              foreignobject#translate_area_left(x='0', y='-70', width='50%', height='250', opacity='0')
                 body(xmlns='http://www.w3.org/1999/xhtml')
                   .trans_left_box
-                    #english_left(style='background-color:#e1e2e3; height:auto; float:right; font-size: 70%; border: 2px solid #fff; color:#87888a; padding: 4px; border-radius: 5px;') English
-                    #trans_tl.trans_text(style='background-color:#e1e2e3; height:auto; border: 2px solid #fff; border-radius: 5px; font-size: 70%; color:#87888a; padding: 10px; margin-top: 20px;')
-                    div(style='height:10px')
-                    #spanish_left(style='background-color:#89ba17; height:auto; float:right; font-size: 70%; border: 2px solid #fff; color:#ffffff; padding: 4px; border-radius: 5px') Spanish
-                    #trans_bl.trans_text(style='background-color:#89ba17; height:auto; border: 2px solid #fff; border-radius: 5px;font-size: 70%; padding: 10px; color:#fff; margin-top: 20px;')
+                    #english_left.trans_before_text_top_left
+                      p#tl_lang(align='center')
+                    #trans_tl.trans_text(style='background-color:#e1e2e3; height:0px; width:0%; border: 2px solid #fff; font-size: 70%; color:#87888a; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px; margin-top: 21px; border-top-left-radius: 7px; border-bottom-left-radius: 7px; z-index: -1;')
+                    #spanish_left.trans_before_text_bottom_left
+                      p#bl_lang(align='center')
+                    #trans_bl.trans_text(style='background-color:#89ba17; height:0px; width:0%; border: 2px solid #fff; font-size: 70%; color:#ffffff; padding: 10px;  margin-top: 0px; border-top-left-radius: 7px; border-bottom-left-radius: 7px; border-bottom-right-radius: 7px; z-index: -1;')
+              foreignobject#translate_area_right(x='200', y='-70', width='50%', height='250', opacity='0')
+                body(xmlns='http://www.w3.org/1999/xhtml')
                   .trans_right_box
-                    #spanish_right(style='background-color:#e1e2e3; height:auto; float:left; font-size: 70%; border: 2px solid #fff; color:#87888a; padding: 4px; border-radius: 5px;') Spanish
-                    #trans_tr.trans_text(style='background-color:#e1e2e3; height:auto; border: 2px solid #fff; border-radius: 5px; font-size: 70%; color:#87888a; padding: 10px; margin-top: 20px;')
-                    div(style='height:10px')
-                    #english_right(style='background-color:#89ba17; height:auto; float:left; font-size: 70%; border: 2px solid #fff; color:#ffffff; padding: 4px; border-radius: 5px;') English
-                    #trans_br.trans_text(style='background-color:#89ba17; height:auto; border: 2px solid #fff; border-radius: 5px; font-size: 70%; color:#fff; padding: 10px; margin-top: 20px;')
+                    #spanish_right.trans_before_text_top_right
+                      p#tr_lang(align='center')
+                    #trans_tr.trans_text(style='background-color:#e1e2e3; height:0px; width:0%; border: 2px solid #fff; font-size: 70%; color:#87888a; padding-top: 10px; padding-left: 10px; padding-right: 10px; padding-bottom: 20px; margin-top: 21px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; z-index: -1')
+                    #english_right.trans_before_text_bottom_right
+                      p#br_lang(align='center')
+                    #trans_br.trans_text(style='background-color:#00a9d4; height:0px; width:0%; border: 2px solid #fff; font-size: 70%; color:#ffffff; padding: 10px;  margin-top: 0px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px;')
               line#pma_left_line(x1='178', y1='-25', x2='178', y2='-25', opacity='0', stroke='#00a9d4', stroke-width='5', stroke-linecap='round', stroke-dasharray='10, 13')
               line#pma_right_line(x1='210', y1='-25', x2='210', y2='-25', opacity='1', stroke='#00a9d4', stroke-width='5')
               image#folder_pma(x='160', y='-75', width='90', height='90', opacity='0', xlink:href='/images/folder_pma_nologo.svg')
@@ -112,7 +126,7 @@ html(lang='en')
           .row(style='height:80px')
           .row
             svg#userb_svg(width='100%', height='200', viewbox='0 0 100 50', preserveaspectratio='xMidYMid slice', xmlns='http://www.w3.org/2000/svg')
-              image#user2(width='100', height='50', xlink:href='/images/user2.png')
+              image#user2(width='100', height='50', opacity='0', xlink:href='/images/user2.png')
           .row
             svg#tablet_svg(width='100%', height='200', viewbox='0 0 100 50', preserveaspectratio='xMidYMid slice', xmlns='http://www.w3.org/2000/svg')
               image#pma_tablet(x='25', y='0', width='50', height='50', opacity='0', xlink:href='/images/tablet_pma_nologo.svg')
@@ -120,3 +134,4 @@ html(lang='en')
               circle#circle_announce(cx='43', cy='32', r='0', fill='#7b0663', stroke-width='0')
               circle#circle_record(cx='52', cy='32', r='0', fill='#e32119', stroke-width='0')
               circle#circle_play(cx='61', cy='32', r='0', fill='#7b0663', stroke-width='0')
+      .row(style='height:30px')
