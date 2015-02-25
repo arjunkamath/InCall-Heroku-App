@@ -304,15 +304,7 @@ function pma_share(urllink){
 	$("#circle_announce").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
 	$("#circle_record").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
 	$("#circle_play").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
-	$("#circle_share").velocity({ r: 3 }, { duration: 500, easing:"spring" });
-
-	if(urllink){
-		var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
-		console.log(link);
-	
-		var frame = document.getElementById("frame_pma");
-		frame.src = link;
-	}
+	$("#circle_share").velocity({ r: 3 }, { duration: 500, easing:"spring" });	
 	
 	$("#pma_app_share").velocity("transition.slideUpBigIn", 1000, function(){
 		//$("#pma_app_play").velocity({opacity:0}, 0);
@@ -323,6 +315,14 @@ function pma_share(urllink){
 			$("#user1").attr('xlink:href',"/images/M2.png");
 			$("#pma_left_line").velocity({ opacity: 1 }, 0);
 			$("#pma_left_line").velocity({ x2: 49 }, 1750);
+			
+			if(urllink){
+				var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
+				console.log(link);
+	
+				var frame = document.getElementById("frame_pma");
+				frame.src = link;
+			}
 
 			document.getElementById("frame_pma").style.border="5px solid #7B0663";
 			document.getElementById("frame_pma").style.borderRadius="10px";
