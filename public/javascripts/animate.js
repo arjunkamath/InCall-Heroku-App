@@ -1086,18 +1086,18 @@ function share_meeting(urllink) {
 
 // EKAHAU
 function in_factory(){
-	$("#ekahau_package").velocity({ x: "20", y:"-100"}, 2000);
+	$("#ekahau_package").velocity({ x: "20", y:"-140"}, 2000);
 }
 
 function from_factory(){
-	$("#ekahau_package").velocity({ x: "220", y:"-100"}, 2000);
+	$("#ekahau_package").velocity({ x: "220", y:"-140"}, 2000);
 }
 
 function in_warehouse(){
-	$("#ekahau_package").velocity({ x: "345", y:"-100"}, 2000);
+	$("#ekahau_package").velocity({ x: "345", y:"-140"}, 2000);
 }
 
 function from_warehouse(){
-	$("#ekahau_package").velocity({ x: "140", y:"-140"}, 2000);
+	$("#ekahau_package").velocity({ x: "140", y:"-190"}, 2000);
 }
 
