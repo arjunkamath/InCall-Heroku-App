@@ -4,20 +4,20 @@
   <tagid>105463838573</tagid>
   <mac>00:18:8E:22:77:6D</mac>
   <assetid>362</assetid>
-  <posx>361</posx>
-  <posy>587</posy>
+  <posx>447</posx>
+  <posy>645</posy>
   <posmodelid>170</posmodelid>
   <posmapid>2</posmapid>
-  <poszoneid>3</poszoneid>
+  <poszoneid>1</poszoneid>
   <posmapname>Jorvas4Ekahau</posmapname>
-  <poszonename>Bliss room</poszonename>
-  <posquality>31</posquality>
+  <poszonename>lansitori</poszonename>
+  <posquality>14</posquality>
   <posreason>3</posreason>
-  <postime>1426162863937</postime>
-  <postimestamp>2015-03-12 14:21:03+0200</postimestamp>
-  <poscounter>480099</poscounter>
-  <battery>71</battery>
-  <batterytime>1426162863937</batterytime>
-  <batterytimestamp>2015-03-12 14:21:03+0200</batterytimestamp>
+  <postime>1426165406688</postime>
+  <postimestamp>2015-03-12 15:03:26+0200</postimestamp>
+  <poscounter>481353</poscounter>
+  <battery>66</battery>
+  <batterytime>1426165406688</batterytime>
+  <batterytimestamp>2015-03-12 15:03:26+0200</batterytimestamp>
 </TAG>
 </response>
