@@ -1086,22 +1086,26 @@ function share_meeting(urllink) {
 
 // EKAHAU
 function in_factory(){
-	$("#ekahau_back").attr('xlink:href',"/images/red_no_blue_instorage.gif");
-	$("#ekahau_back").attr('xlink:href',"/images/red_infactory_blue_instorage.gif");
+	//$("#ekahau_back").attr('xlink:href',"img/red_infactory_blue_instorage.gif");
+	document.getElementById("ekahau_back").src = "img/red_no_blue_instorage.gif";
+	document.getElementById("ekahau_back").src = "img/red_infactory_blue_instorage.gif";
 }
 
 function from_factory(){
-	$("#ekahau_back").attr('xlink:href',"/images/red_no_blue_instorage.gif");
-	$("#ekahau_back").attr('xlink:href',"/images/red_fromfactory_blue_instorage.gif");
+	//$("#ekahau_back").attr('xlink:href',"img/red_fromfactory_blue_instorage.gif");
+	document.getElementById("ekahau_back").src = "img/red_no_blue_instorage.gif";
+	document.getElementById("ekahau_back").src = "img/red_fromfactory_blue_instorage.gif"
 }
 
 function in_warehouse(){
-	$("#ekahau_back").attr('xlink:href',"/images/red_no_blue_instorage.gif");
-	$("#ekahau_back").attr('xlink:href',"/images/red_inwarehouse_blue_instorage.gif");
+	//$("#ekahau_back").attr('xlink:href',"img/red_inwarehouse_blue_instorage.gif");
+	document.getElementById("ekahau_back").src = "img/red_no_blue_instorage.gif";
+	document.getElementById("ekahau_back").src = "img/red_inwarehouse_blue_instorage.gif"
 }
 
 function from_warehouse(){
-	$("#ekahau_back").attr('xlink:href',"/images/red_no_blue_instorage.gif");
-	$("#ekahau_back").attr('xlink:href',"/images/red_fromwarehouse_blue_instorage.gif");
+	//$("#ekahau_back").attr('xlink:href',"img/red_fromwarehouse_blue_instorage.gif");
+	document.getElementById("ekahau_back").src = "img/red_no_blue_instorage.gif";
+	document.getElementById("ekahau_back").src = "img/red_fromwarehouse_blue_instorage.gif"
 }
 
