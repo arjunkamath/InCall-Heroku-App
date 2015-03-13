@@ -1097,10 +1097,10 @@ function from_factory(){
 	document.getElementById("ekahau_back").src = "/images/red_fromfactory_blue_instorage.gif"
 	
 	setTimeout(function() {
-		document.getElementById("ekahau_back").style.opacity = "0";
+		//document.getElementById("ekahau_back").style.opacity = "0";
 		document.getElementById("ekahau_back").src = "/images/red_fromfactory_blue_instorage_png.png";
-		document.getElementById("ekahau_back").style.opacity = "1";
-	}, 5000);
+		//document.getElementById("ekahau_back").style.opacity = "1";
+	}, 7000);
 }
 
 function in_warehouse(){
@@ -1115,9 +1115,9 @@ function from_warehouse(){
 	document.getElementById("ekahau_back").src = "/images/red_fromwarehouse_blue_instorage.gif"
 	
 	setTimeout(function() {
-		document.getElementById("ekahau_back").style.opacity = "0";
+		//document.getElementById("ekahau_back").style.opacity = "0";
 		document.getElementById("ekahau_back").src = "/images/red_fromwarehouse_blue_instorage_png.png";
-		document.getElementById("ekahau_back").style.opacity = "1";
-	}, 5000);
+		//document.getElementById("ekahau_back").style.opacity = "1";
+	}, 7000);
 }
 
