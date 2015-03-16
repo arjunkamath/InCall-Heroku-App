@@ -7,9 +7,9 @@ var line_num = 0;
 var current_line = '';
 var xposition;
 
-var BLISS_LEFT = 350;
-var BLISS_RIGHT = 450;
-var CHECK_COUNT = 3;
+var BLISS_LEFT = 340;
+var BLISS_RIGHT = 420;
+var CHECK_COUNT = 5;
 
 var STATE_FACTORY = 1;
 var STATE_FROM_FACTORY = 2;
@@ -63,8 +63,11 @@ function read_result(){
 				factory_count = factory_count + 2;
 				adjust_values();
 				
-				if(factory_count == CHECK_COUNT && (last_state != STATE_FACTORY)){
+				if(factory_count == CHECK_COUNT){
 						request.get('https://agile-beach-2376.herokuapp.com/fire-event/infactory')
+						
+						console.log('sse sent');
+						
 						last_state = STATE_FACTORY;
 				}
 				
@@ -90,6 +93,8 @@ function read_result(){
 						var url = ('https://agile-beach-2376.herokuapp.com/fire-event/' + "from" + last_location);
 						request.get(url);
 						
+						console.log('sse sent');
+						
 						last_state = state;
 				}
 			} else {
@@ -99,8 +104,11 @@ function read_result(){
 				warehouse_count = warehouse_count + 2;
 				adjust_values();
 				
-				if(warehouse_count == CHECK_COUNT && (last_state != STATE_WAREHOUSE)){
+				if(warehouse_count == CHECK_COUNT){
 						request.get('https://agile-beach-2376.herokuapp.com/fire-event/inwarehouse')
+						
+						console.log('sse sent');
+						
 						last_state = STATE_WAREHOUSE;
 				}
 			}
@@ -120,7 +128,7 @@ function delay_read(){
 	setInterval(read_result, 2000);
 }
 
-setTimeout(delay_read, 500);
+setTimeout(delay_read, 200);
 
 function adjust_values(){
 	
