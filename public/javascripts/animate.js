@@ -1087,18 +1087,26 @@ function share_meeting(urllink) {
 // EKAHAU
 function in_factory(){
 	//$("#ekahau_back").attr('xlink:href',"img/red_infactory_blue_instorage.gif");
-	document.getElementById("ekahau_back").src = "/images/red_infactory_blue_instorage_png.png";
+	//document.getElementById("ekahau_back").src = "/images/red_infactory_blue_instorage_png.png";
 	//document.getElementById("ekahau_back").src = "/images/red_infactory_blue_instorage.gif";
+	
+	$('#ekahau_back').attr('src', '/images/red_infactory_blue_instorage_png.png');
+	$('#ekahau_extra').attr('src', '/images/ekahau_extra.gif');
+	
 }
 
 function from_factory(){
 	//$("#ekahau_back").attr('xlink:href',"img/red_fromfactory_blue_instorage.gif");
 	//document.getElementById("ekahau_back").src = "/images/red_no_blue_instorage.gif";
-	document.getElementById("ekahau_back").src = "/images/red_fromfactory_blue_instorage.gif"
+	//document.getElementById("ekahau_back").src = "/images/red_fromfactory_blue_instorage.gif";
+	$('#ekahau_back').attr('src', '/images/red_fromfactory_blue_instorage.gif');
+	$('#ekahau_extra').attr('src', '/images/ekahau_extra.gif');
 	
 	setTimeout(function() {
 		//document.getElementById("ekahau_back").style.opacity = "0";
-		document.getElementById("ekahau_back").src = "/images/red_fromfactory_blue_instorage_png.png";
+		
+		//document.getElementById("ekahau_back").src = "/images/red_fromfactory_blue_instorage_png.png";
+		$('#ekahau_back').attr('src', '/images/red_fromfactory_blue_instorage_png.png');
 		//document.getElementById("ekahau_back").style.opacity = "1";
 	}, 7000);
 }
@@ -1106,17 +1114,23 @@ function from_factory(){
 function in_warehouse(){
 	//$("#ekahau_back").attr('xlink:href',"img/red_inwarehouse_blue_instorage.gif");
 	//document.getElementById("ekahau_back").src = "/images/red_no_blue_instorage.gif";
-	document.getElementById("ekahau_back").src = "/images/red_inwarehouse_blue_instorage_png.png"
+	//document.getElementById("ekahau_back").src = "/images/red_inwarehouse_blue_instorage_png.png"
+	
+	$('#ekahau_back').attr('src', '/images/red_inwarehouse_blue_instorage_png.png');
+	$('#ekahau_extra').attr('src', '/images/ekahau_extra_yellow.gif');
 }
 
 function from_warehouse(){
 	//$("#ekahau_back").attr('xlink:href',"img/red_fromwarehouse_blue_instorage.gif");
 	//document.getElementById("ekahau_back").src = "/images/red_no_blue_instorage.gif";
-	document.getElementById("ekahau_back").src = "/images/red_fromwarehouse_blue_instorage.gif"
+	//document.getElementById("ekahau_back").src = "/images/red_fromwarehouse_blue_instorage.gif"
+	$('#ekahau_back').attr('src', '/images/red_fromwarehouse_blue_instorage.gif');
+	$('#ekahau_extra').attr('src', '/images/ekahau_extra_yellow.gif');
 	
 	setTimeout(function() {
 		//document.getElementById("ekahau_back").style.opacity = "0";
-		document.getElementById("ekahau_back").src = "/images/red_fromwarehouse_blue_instorage_png.png";
+		//document.getElementById("ekahau_back").src = "/images/red_fromwarehouse_blue_instorage_png.png";
+		$('#ekahau_back').attr('src', '/images/red_fromwarehouse_blue_instorage_png.png');
 		//document.getElementById("ekahau_back").style.opacity = "1";
 	}, 7000);
 }

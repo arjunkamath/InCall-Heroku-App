@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<response>
+<TAG>
+  <tagid>105463838573</tagid>
+  <mac>00:18:8E:22:77:6D</mac>
+  <assetid>362</assetid>
+  <posx>358</posx>
+  <posy>590</posy>
+  <posmodelid>170</posmodelid>
+  <posmapid>2</posmapid>
+  <poszoneid>3</poszoneid>
+  <posmapname>Jorvas4Ekahau</posmapname>
+  <poszonename>Bliss room</poszonename>
+  <posquality>94</posquality>
+  <posreason>3</posreason>
+  <postime>1426497083445</postime>
+  <postimestamp>2015-03-16 11:11:23+0200</postimestamp>
+  <poscounter>653438</poscounter>
+  <battery>95</battery>
+  <batterytime>1426497083445</batterytime>
+  <batterytimestamp>2015-03-16 11:11:23+0200</batterytimestamp>
+</TAG>
+</response>
