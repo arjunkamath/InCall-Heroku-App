@@ -8,8 +8,8 @@ var current_line = '';
 var xposition;
 
 var BLISS_LEFT = 340;
-var BLISS_RIGHT = 420;
-var CHECK_COUNT = 5;
+var BLISS_RIGHT = 400;
+var CHECK_COUNT = 3;
 
 var STATE_FACTORY = 1;
 var STATE_FROM_FACTORY = 2;
