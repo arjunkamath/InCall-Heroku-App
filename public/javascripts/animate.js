@@ -1135,3 +1135,22 @@ function from_warehouse(){
 	}, 7000);
 }
 
+var positive_count = 0;
+var neutral_count = 0;
+var negative_count = 0;
+
+// feedback app
+function positive_feedback(){
+	var positive_count++;
+	document.getElementById("positive_p1").innerHTML = positive_count;
+}
+
+function neutral_feedback(){
+	var neutral_count++;
+	document.getElementById("neutral_p1").innerHTML = neutral_count;
+}
+
+function negative_feedback(){
+	var negative_count++;
+	document.getElementById("negative_p1").innerHTML = negative_count;
+}

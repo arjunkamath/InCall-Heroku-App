@@ -69,5 +69,12 @@ html
           from_warehouse(); 
         }
 
+		else if((e.data).indexOf("positive") > -1){
+          positive_feedback(); 
+        } else if((e.data).indexOf("neutral") > -1){
+          neutral_feedback(); 
+        } else if((e.data).indexOf("negative") > -1){
+          negative_feedback(); 
+        }
       
       }, false);
