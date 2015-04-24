@@ -1141,16 +1141,19 @@ var negative_count = 0;
 
 // feedback app
 function positive_feedback(){
-	var positive_count++;
+	positive_count = positive_count + 1;
 	document.getElementById("positive_p1").innerHTML = positive_count;
+	console.log("positive");
 }
 
 function neutral_feedback(){
-	var neutral_count++;
+	neutral_count = neutral_count + 1;
 	document.getElementById("neutral_p1").innerHTML = neutral_count;
+	console.log("neutral");
 }
 
 function negative_feedback(){
-	var negative_count++;
+	negative_count = negative_count + 1;
 	document.getElementById("negative_p1").innerHTML = negative_count;
+	console.log("negative");
 }
