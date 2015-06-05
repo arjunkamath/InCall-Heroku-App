@@ -27,14 +27,24 @@ function pma_trigger_stop_announce(){
 	pma_announce_stop();
 }
 
+var is_recorder_animating = false;
+
 function pma_trigger_record(){
+	if(is_recorder_animating)
+	{
+		return;
+	}
+	
 	pma_record();
+	is_recorder_animating = true;
 	
 	setTimeout(pma_trigger_stop_record, 7000);
 }
 
 function pma_trigger_stop_record(){
 	pma_record_stop();
+	
+	is_recorder_animating = false;
 }
 
 function pma_trigger_play(){
