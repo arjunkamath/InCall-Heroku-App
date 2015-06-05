@@ -317,7 +317,7 @@ function pma_share(urllink){
 			$("#pma_left_line").velocity({ x2: 49 }, 1750);
 			
 			if(urllink){
-				var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
+				var link = 'https://incall.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
 				console.log(link);
 	
 				var frame = document.getElementById("frame_pma");
