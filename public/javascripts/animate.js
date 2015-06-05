@@ -1061,7 +1061,7 @@ function disconnected() {
 
 function share_meeting(urllink) {
 	
-	var link = 'https://tabin1.punosmobile.com/pma-cloud/#/' + urllink.slice(3);
+	var link = 'https://incall.punosmobile.com/pma-cloud/#/' + urllink.slice(3);
 
   	$("#sms_box").velocity({ x: "-=1000"}, 2000, function(){
 		$('#vertical_line_left').velocity({ opacity: 1 }, 0);
