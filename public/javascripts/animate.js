@@ -17,13 +17,25 @@ function pma_cloud_share(urllink){
 	pma_share(urllink);
 }
 
+var is_announce_animating = false;
+
 function pma_trigger_announce(){
+	
+	if(is_announce_animating)
+	{
+		return;
+	}
+	
 	pma_announce();
+	is_announce_animating = true;
 	
 	setTimeout(pma_trigger_stop_announce, 7000);
 }
 
 function pma_trigger_stop_announce(){
+	
+	is_announce_animating = false;
+	
 	pma_announce_stop();
 }
 
@@ -47,15 +59,26 @@ function pma_trigger_stop_record(){
 	is_recorder_animating = false;
 }
 
+var are_recordings_playing = false;
+
 function pma_trigger_play(){
+	if(are_recordings_playing)
+	{
+		return;
+	}
 	pma_play();
+	are_recordings_playing = true;
 	
 	setTimeout(pma_trigger_stop_play, 7000);
 }
 
 function pma_trigger_stop_play(){
+	
 	pma_play_stop();
+	
+	are_recordings_playing = false;
 }
+
 
 function pma_trigger_disconnect(){
 	pma_disconnect();
@@ -309,7 +332,14 @@ function it_cloud_appear(){
 	$("#circle_l").velocity({ r: 25 }, { delay: 1000, duration: 6500, loop:true});
 }
 
+var cloud_share_done = false;
+
 function pma_share(urllink){
+	
+	if(cloud_share_done)
+	{
+		return;
+	}
 
 	$("#circle_announce").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
 	$("#circle_record").velocity({ r: 1.5 }, { duration: 500, easing:"spring" });
@@ -317,6 +347,9 @@ function pma_share(urllink){
 	$("#circle_share").velocity({ r: 3 }, { duration: 500, easing:"spring" });	
 	
 	$("#pma_app_share").velocity("transition.slideUpBigIn", 1000, function(){
+		
+		cloud_share_done = true;
+		
 		//$("#pma_app_play").velocity({opacity:0}, 0);
 		//$("#pma_app_announce").velocity({opacity:0}, 0);
 		//$("#pma_app_record").velocity({opacity:0}, 0);
