@@ -360,7 +360,7 @@ function pma_share(urllink){
 			$("#pma_left_line").velocity({ x2: 49 }, 1750);
 			
 			if(urllink){
-				var link = 'https://incall.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
+				var link = 'https://incall1.punosmobile.com/pma-cloud/#/' + urllink.slice(4, -1);
 				console.log(link);
 	
 				var frame = document.getElementById("frame_pma");
@@ -1101,10 +1101,10 @@ function disconnected() {
 		
 	console.log('disconnected');
 }
-
+/* 
 function share_meeting(urllink) {
 	
-	var link = 'https://incall.punosmobile.com/pma-cloud/#/' + urllink.slice(3);
+	var link = 'https://incall1.punosmobile.com/pma-cloud/#/' + urllink.slice(3);
 
   	$("#sms_box").velocity({ x: "-=1000"}, 2000, function(){
 		$('#vertical_line_left').velocity({ opacity: 1 }, 0);
@@ -1125,7 +1125,7 @@ function share_meeting(urllink) {
 		});
 	});
 }
-
+ */
 
 // EKAHAU
 function in_factory(){
